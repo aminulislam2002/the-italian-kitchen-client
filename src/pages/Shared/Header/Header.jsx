@@ -1,9 +1,11 @@
 import React from "react";
-
+import NavigationBar from "../NavigationBar/NavigationBar";
+import NavBanner from "../NavBanner/NavBanner";
 const Header = () => {
   return (
     <div>
-      <h1>This is Header.</h1>
+      <NavigationBar></NavigationBar>
+      <NavBanner></NavBanner>
     </div>
   );
 };
