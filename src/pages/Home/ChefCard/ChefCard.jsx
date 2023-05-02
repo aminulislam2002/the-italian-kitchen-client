@@ -8,8 +8,8 @@ const ChefCard = ({ chef }) => {
     <div className="row justify-content-center align-items-center">
       <div className="col-sm-12">
         <div className="card mt-5">
-          <div className="card-body d-flex gap-5">
-            <div className="w-25">
+          <div className="card-body  row">
+            <div className="col-sm-12 order-2 order-md-2 order-lg-1 col-md-6 col-lg-4">
               <h4>Name: {name}</h4>
               <p>Years of experience: {years_of_experience}</p>
               <p>Numbers of recipes: {number_of_recipes}</p>
@@ -20,11 +20,11 @@ const ChefCard = ({ chef }) => {
                 </Link>
               </Button>
             </div>
-            <div className="w-50">
+            <div className="col-sm-12 order-3  order-md-3 order-lg-2 col-md-6 col-lg-4">
               <h4 className="text-center">Bio</h4>
               <p>{bio}</p>
             </div>
-            <div className="w-25 d-flex justify-content-center align-items-center">
+            <div className="col-sm-12 order-1  order-md-1 order-lg-3 col-md-6 col-lg-4 d-flex justify-content-center align-items-center">
               <img className="img-fluid" src={image_url} alt="" />
             </div>
           </div>

@@ -3,70 +3,126 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer mt-5 pt-5">
+      <footer className="footer mt-5 pt-5 mb-5 pb-5">
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-sm-6 col-md-4">
-              <h1>The Italian Kitchn</h1>
-              <p>
-                There are many variations of passages of Lorem Ipsum, but the majority have suffered alteration in some form.
-              </p>
+            <div className="col-sm-12 col-md-8 col-lg-4 order-1 order-md-1 order-lg-1 d-flex justify-content-center align-align-items-lg-start">
+              <div>
+                <h2>The Italian Kitchn</h2>
+                <h6>Authentic Italian Cuisine at The Italian Kitchen: A Cozy Haven for Foodies.</h6>
+                <p>
+                  At The Italian Kitchen, guests can enjoy a genuine Italian dining experience, complete with traditional
+                  dishes, quality ingredients, and a warm, welcoming atmosphere.
+                </p>
+              </div>
             </div>
-            <div className="col-xs-6 col-sm-3 col-md-2">
-              <h4>Company</h4>
-              <ul className="list-unstyled">
-                <li>
-                  <a href="#">About Us</a>
-                </li>
-                <li>
-                  <a href="#">Work</a>
-                </li>
-                <li>
-                  <a href="#">Latest News</a>
-                </li>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
-              </ul>
+            <div className="col-sm-12 col-md-4 col-lg-2 order-3 order-md-3 order-lg-2 d-flex justify-content-center align-items-start">
+              <div>
+                <h4>Restaurant</h4>
+                <ul className="list-unstyled">
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      About Us
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Our Services
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Latest Products
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      About Our Facilities
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="col-xs-6 col-sm-3 col-md-2">
-              <h4>Product</h4>
-              <ul className="list-unstyled">
-                <li>
-                  <a href="#">Prototype</a>
-                </li>
-                <li>
-                  <a href="#">Plans & Pricing</a>
-                </li>
-                <li>
-                  <a href="#">Customers</a>
-                </li>
-                <li>
-                  <a href="#">Integrations</a>
-                </li>
-              </ul>
+            <div className="col-sm-12 col-md-4 col-lg-2 order-3 order-md-4 order-lg-3 d-flex justify-content-center align-items-start">
+              <div>
+                <h4>Products</h4>
+                <ul className="list-unstyled">
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Cool Drinks
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Chicken
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Fast Food
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Vegetables
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="col-xs-6 col-sm-3 col-md-2">
-              <h4>Support</h4>
-              <ul className="list-unstyled">
-                <li>
-                  <a href="#">Help Desk</a>
-                </li>
-                <li>
-                  <a href="#">Sales</a>
-                </li>
-                <li>
-                  <a href="#">Become a Partner</a>
-                </li>
-                <li>
-                  <a href="#">Developers</a>
-                </li>
-              </ul>
+            <div className="col-sm-12 col-md-4 col-lg-2 order-4 order-md-5 order-lg-4 d-flex justify-content-center align-items-start">
+              <div>
+                <h4>Support</h4>
+                <ul className="list-unstyled">
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Help Desk
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Message Us
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Call Us
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                      Email Us
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="col-xs-6 col-sm-3 col-md-3 col-lg-2">
-              <h4>Contact</h4>
-              <p>+1 777 - 978 - 5570</p>
-              <p>524 Broadway , NYC</p>
+            <div className="col-sm-12 col-md-4 col-lg-2 order-5 order-md-2 order-lg-5 d-flex justify-content-center align-items-start">
+              <div>
+                <h4>Contact</h4>
+                <ul className="list-unstyled">
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                    +1777-978-5570
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                    example@gmail.com
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                    524 Broadway, Rome.
+                    </a>
+                  </li>
+                  <li>
+                    <a className="text-decoration-none" href="#">
+                    Rome, Italy.
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

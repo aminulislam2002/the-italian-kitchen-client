@@ -19,13 +19,13 @@ const RecipeCard = ({ recipe }) => {
         <div className="col-sm-12">
           <div className="card mt-5">
             <div className="card-body row">
-              <div className="col">
+              <div className="col-sm-12 col-md-6 col-lg-4">
                 <h3>{title}</h3>
                 <div className="w-100 d-flex justify-content-center align-items-center">
                   <img className="img-fluid" src={img} alt="" />
                 </div>
               </div>
-              <div className="col">
+              <div className="col-sm-12 col-md-6 col-lg-4">
                 <h3>Ingredients</h3>
                 <ol>
                   {ingredients.slice(0, ingredientsItems).map((ingredient, index) => (
@@ -40,7 +40,7 @@ const RecipeCard = ({ recipe }) => {
                   </button>
                 )}
               </div>
-              <div className="col">
+              <div className="col-sm-12 col-md-6 col-lg-4">
                 <h3>Instructions</h3>
                 <ul>
                   {instructions.slice(0, instructionsItems).map((instruction, index) => (

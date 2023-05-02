@@ -85,14 +85,14 @@ const Register = () => {
   return (
     <Container className="mx-auto w-50">
       <div>
-        <div className="d-flex align-items-center justify-content-between">
-          <Form.Text className="fs-3 text-black fw-bold">Create an Account</Form.Text>
-          <Form.Text className="text-muted fs-6">
+        <div className="row d-flex align-items-center justify-content-between">
+          <h4 className="col-md-12 col-lg-6 fs-3 text-black fw-bold">Create an Account</h4>
+          <p className="col-md-12 col-lg-6 text-muted fs-6">
             Already have an account?{" "}
             <Link to="/login" className="text-decoration-none">
               Login
             </Link>
-          </Form.Text>
+          </p>
         </div>
         <hr />
         <div className="mb-5">
@@ -107,7 +107,7 @@ const Register = () => {
       </div>
 
       <Form onSubmit={handleCreateUser}>
-        <div className="d-flex gap-5">
+        <div className=" d-flex gap-5">
           <Form.Group className="mb-3 w-50" controlId="formBasicFirstName">
             <Form.Label>First Name</Form.Label>
             <Form.Control type="text" name="fName" placeholder="Enter first name" required />

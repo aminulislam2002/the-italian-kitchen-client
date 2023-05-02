@@ -44,14 +44,14 @@ const Login = () => {
   return (
     <Container className="mx-auto w-50">
       <Form onSubmit={handleLogIn}>
-        <div className="d-flex align-items-center justify-content-between mb-3">
-          <Form.Text className="fs-3 text-black fw-bold">Please Login</Form.Text>
-          <Form.Text className="text-muted">
+        <div className="row d-flex align-items-center justify-content-between mb-3">
+          <h4 className="col-md-12 col-lg-6 fs-3 text-black fw-bold">Please Login</h4>
+          <p className="col-md-12 col-lg-6 text-muted">
             Don't have an account?{" "}
             <Link to="/register" className="text-decoration-none">
               Register
             </Link>
-          </Form.Text>
+          </p>
         </div>
         <hr />
         <Form.Group className="mb-3" controlId="formBasicEmail">
