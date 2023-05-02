@@ -10,9 +10,11 @@ const ChefRecipesDetails = () => {
     <div>
       <h1>Chef Recipes {id}</h1>
       <h1>Total Chef Recipes {singleChefRecipes.length}</h1>
-      {singleChefRecipes.map((recipe) => (
-        <RecipeCard key={recipe.id} recipe={recipe}></RecipeCard>
-      ))}
+      <div className="container">
+        {singleChefRecipes.map((recipe) => (
+          <RecipeCard key={recipe.key} recipe={recipe}></RecipeCard>
+        ))}
+      </div>
     </div>
   );
 };
