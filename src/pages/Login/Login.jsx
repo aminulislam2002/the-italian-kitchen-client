@@ -22,7 +22,7 @@ const Login = () => {
           <Form.Control type="password" name="password" placeholder="Password" required />
         </Form.Group>
         <div className="d-flex justify-content-center align-items-center">
-          <Button variant="primary" type="submit" className="w-50">
+          <Button variant="info" type="submit" className="w-50">
             Login
           </Button>
         </div>

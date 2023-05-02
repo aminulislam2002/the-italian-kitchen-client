@@ -14,15 +14,15 @@ const Register = () => {
         </div>
         <hr />
         <div className="mb-5">
-          <Button variant="primary" className="w-100 mb-3 mt-3" type="submit">
+          <Button variant="info" className="w-100 mb-3 mt-3" type="submit">
             Continue with Google
           </Button>
-          <Button variant="primary" className="w-100 mb-3" type="submit">
-            Continue with Github
+          <Button variant="info" className="w-100 mb-3" type="submit">
+            Continue with Github 
           </Button>
           <hr /> <p className="text-center">or</p> <hr />
         </div>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Your Name</Form.Label>
           <Form.Control type="text" name="name" placeholder="Enter name" required />
         </Form.Group>
@@ -30,7 +30,7 @@ const Register = () => {
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" name="email" placeholder="Enter email" required />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicPhotoUrl">
           <Form.Label>Photo URL</Form.Label>
           <Form.Control type="text" name="photo" placeholder="Enter photo url" required />
         </Form.Group>
@@ -42,7 +42,7 @@ const Register = () => {
           <Form.Check type="checkbox" name="accept" label="Accept Terms and Condition" />
         </Form.Group>
         <div className="d-flex justify-content-center align-items-center">
-          <Button variant="primary" type="submit" className="w-50">
+          <Button variant="info" type="submit" className="w-50">
             Register
           </Button>
         </div>

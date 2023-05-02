@@ -33,7 +33,7 @@ const RecipeCard = ({ recipe }) => {
                   ))}
                 </ol>
                 {ingredientsItems < ingredients.length && (
-                  <button onClick={handleIngredientsClick} type="button" className="btn btn-link">
+                  <button onClick={handleIngredientsClick} type="button" className="btn btn-link text-decoration-none">
                     See More
                   </button>
                 )}
@@ -46,7 +46,7 @@ const RecipeCard = ({ recipe }) => {
                   ))}
                 </ul>
                 {instructionsItems < instructions.length && (
-                  <button onClick={handleInstructionsClick} type="button" className="btn btn-link">
+                  <button onClick={handleInstructionsClick} type="button" className="btn btn-link text-decoration-none">
                     See More
                   </button>
                 )}

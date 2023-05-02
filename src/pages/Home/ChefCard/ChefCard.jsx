@@ -15,7 +15,9 @@ const ChefCard = ({ chef }) => {
               <p>Numbers of recipes: {number_of_recipes}</p>
               <p>Likes: {likes}</p>
               <Button variant="info">
-                <Link to={`/chef/${chef.id}`}>View Recipes</Link>
+                <Link to={`/chef/${chef.id}`} className="text-decoration-none">
+                  View Recipes
+                </Link>
               </Button>
             </div>
             <div className="w-50">
