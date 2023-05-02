@@ -6,6 +6,7 @@ import Login from "../pages/Login/Login";
 import ChefRecipe from "../layouts/ChefRecipe";
 import ChefRecipesDetails from "../pages/Home/ChefRecipesDetails/ChefRecipesDetails";
 import PrivateRoute from "./PrivateRoute";
+import Page404 from "../pages/Page404/Page404";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         loader: ({ params }) => fetch(`http://localhost:5000/recipes/${params.id}`),
       },
     ],
+  },
+  {
+    path: "/*",
+    element: <Page404></Page404>,
   },
 ]);
 
