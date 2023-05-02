@@ -2,14 +2,16 @@ import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, createUserWithGoogle } = useContext(AuthContext);
+  const provider = new GoogleAuthProvider()
 
   const [error, setError] = useState(" ");
   const [success, setSuccess] = useState(" ");
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -39,7 +41,7 @@ const Register = () => {
         const createdUser = result.user;
         console.log(createdUser);
         setSuccess("Congratulations! Your account has been successfully created!");
-        // navigate("/");
+        navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -53,9 +55,22 @@ const Register = () => {
     form.reset();
   };
 
+  const handleGoogleSingIn = () => {
+    createUserWithGoogle(provider)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
+
   return (
     <Container className="mx-auto w-50">
-      <Form onSubmit={handleCreateUser}>
+      <div>
         <div className="d-flex align-items-center justify-content-between">
           <Form.Text className="fs-3 text-black fw-bold">Create an Account</Form.Text>
           <Form.Text className="text-muted fs-6">
@@ -67,14 +82,17 @@ const Register = () => {
         </div>
         <hr />
         <div className="mb-5">
-          <Button variant="info" className="w-100 mb-3 mt-3" type="submit">
+          <Button onClick={handleGoogleSingIn} variant="info" className="w-100 mb-3 mt-3" type="submit">
             Continue with Google
           </Button>
           <Button variant="info" className="w-100 mb-3" type="submit">
             Continue with Github
           </Button>
-          <hr /> <p className="text-center">or</p> <hr />
+          <hr /> <p className="text-center">or, Create an account with email and password.</p> <hr />
         </div>
+      </div>
+
+      <Form onSubmit={handleCreateUser}>
         <div className="d-flex gap-5">
           <Form.Group className="mb-3 w-50" controlId="formBasicFirstName">
             <Form.Label>First Name</Form.Label>
