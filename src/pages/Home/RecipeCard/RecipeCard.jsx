@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const RecipeCard = ({ recipe }) => {
-  const { ingredients, instructions, title } = recipe;
+  const { ingredients, instructions, title, img } = recipe;
 
   const [ingredientsItems, setIngredientsItems] = useState(5);
   const [instructionsItems, setInstructionsItems] = useState(3);
@@ -21,7 +21,9 @@ const RecipeCard = ({ recipe }) => {
             <div className="card-body row">
               <div className="col">
                 <h3>{title}</h3>
-                <h4>Here image</h4>
+                <div className="w-100 d-flex justify-content-center align-items-center">
+                  <img className="img-fluid" src={img} alt="" />
+                </div>
               </div>
               <div className="col">
                 <h3>Ingredients</h3>
