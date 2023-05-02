@@ -12,7 +12,7 @@ const ChefRecipesDetails = () => {
       <h1>Total Chef Recipes {singleChefRecipes.length}</h1>
       <div className="container">
         {singleChefRecipes.map((recipe) => (
-          <RecipeCard key={recipe.key} recipe={recipe}></RecipeCard>
+          <RecipeCard key={recipe.key} recipe={recipe} id={id}></RecipeCard>
         ))}
       </div>
     </div>

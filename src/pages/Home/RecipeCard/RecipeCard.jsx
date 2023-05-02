@@ -1,5 +1,4 @@
-import { Button } from "bootstrap";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const RecipeCard = ({ recipe }) => {
   const { ingredients, instructions, title } = recipe;
@@ -14,7 +13,6 @@ const RecipeCard = ({ recipe }) => {
   const handleInstructionsClick = () => {
     setInstructionsItems(instructions.length);
   };
-
   return (
     <div>
       <div className="row justify-content-center align-items-center">
@@ -23,7 +21,7 @@ const RecipeCard = ({ recipe }) => {
             <div className="card-body row">
               <div className="col">
                 <h3>{title}</h3>
-                <h>Here image</h>
+                <h4>Here image</h4>
               </div>
               <div className="col">
                 <h3>Ingredients</h3>
@@ -35,7 +33,7 @@ const RecipeCard = ({ recipe }) => {
                   ))}
                 </ol>
                 {ingredientsItems < ingredients.length && (
-                  <button onClick={handleIngredientsClick} type="button" class="btn btn-link">
+                  <button onClick={handleIngredientsClick} type="button" className="btn btn-link">
                     See More
                   </button>
                 )}
@@ -48,7 +46,7 @@ const RecipeCard = ({ recipe }) => {
                   ))}
                 </ul>
                 {instructionsItems < instructions.length && (
-                  <button onClick={handleInstructionsClick} type="button" class="btn btn-link">
+                  <button onClick={handleInstructionsClick} type="button" className="btn btn-link">
                     See More
                   </button>
                 )}

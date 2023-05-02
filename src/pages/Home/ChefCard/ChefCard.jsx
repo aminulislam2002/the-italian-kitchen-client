@@ -3,9 +3,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const ChefCard = ({ chef }) => {
-  console.log(chef);
   const { id, name, years_of_experience, number_of_recipes, likes, bio, image_url } = chef;
-  console.log(id);
   return (
     <div className="row justify-content-center align-items-center">
       <div className="col-sm-12">
