@@ -5,7 +5,19 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { FaUser } from "react-icons/fa";
 
 const NavigationBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
 
   return (
     <div>
@@ -24,10 +36,12 @@ const NavigationBar = () => {
             </Nav>
             <div className="d-flex justify-content-between align-align-items-center gap-3 ">
               <Button variant="info">
-                <Link to="/register" className="text-decoration-none">Create Account</Link>
+                <Link to="/register" className="text-decoration-none">
+                  Create Account
+                </Link>
               </Button>
               {user ? (
-                <Button variant="info">
+                <Button onClick={handleLogOut} variant="info">
                   <Link className="text-decoration-none">Log Out</Link>
                 </Button>
               ) : (

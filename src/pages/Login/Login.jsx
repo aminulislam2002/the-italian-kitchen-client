@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
   const { logIn } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const [error, setError] = useState(" ");
   const [success, setSuccess] = useState(" ");
@@ -24,6 +25,7 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         setSuccess("Login Successful!")
+        navigate("/")
       })
       .catch((error) => {
         const errorCode = error.code;
