@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const {} = useContext(AuthContext);
+  
+
   return (
     <Container className="mx-auto w-50">
       <Form>
         <div className="d-flex align-items-center justify-content-between mb-3">
           <Form.Text className="fs-3 text-black fw-bold">Please Login</Form.Text>
           <Form.Text className="text-muted">
-            Don't have an account? <Link to="/register">Register</Link>
+            Don't have an account?{" "}
+            <Link to="/register" className="text-decoration-none">
+              Register
+            </Link>
           </Form.Text>
         </div>
         <hr />

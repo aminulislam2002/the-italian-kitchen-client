@@ -17,14 +17,14 @@ const NavigationBar = () => {
             <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#action2">Blogs</Nav.Link>
-              <Nav.Link href="#action2">{user.displayName}</Nav.Link>
+              <Nav.Link href="#action2">{user?.displayName}</Nav.Link>
               <Nav.Link href="#action3">
                 <FaUser></FaUser>
               </Nav.Link>
             </Nav>
             <div className="d-flex justify-content-between align-align-items-center gap-3 ">
               <Button variant="info">
-                <Link to="/register" className="text-decoration-none">Register</Link>
+                <Link to="/register" className="text-decoration-none">Create Account</Link>
               </Button>
               {user ? (
                 <Button variant="info">
