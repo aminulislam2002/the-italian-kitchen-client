@@ -7,6 +7,7 @@ const Register = () => {
   const { createUser } = useContext(AuthContext);
 
   const [error, setError] = useState(" ");
+  const [success, setSuccess] = useState(" ");
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -28,17 +29,22 @@ const Register = () => {
       return;
     }
 
+    setSuccess(" ")
     setError(" ");
 
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
+        setSuccess("Congratulations! Your account has been successfully created!");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        setError(
+          "We're sorry, but we were unable to create your account at this time. Please double-check your information and try again."
+        );
       });
 
     form.reset();
@@ -103,7 +109,7 @@ const Register = () => {
           </Button>
         </div>
         <br />
-        <Form.Text className="text-success">We'll never share your email with anyone else.</Form.Text>
+        <Form.Text className="text-success">{success}</Form.Text>
         <br />
         <Form.Text className="text-danger">{error}</Form.Text>
       </Form>

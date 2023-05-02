@@ -1,15 +1,43 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-  const {} = useContext(AuthContext);
-  
+  const { logIn } = useContext(AuthContext);
+
+  const [error, setError] = useState(" ");
+  const [success, setSuccess] = useState(" ");
+
+  const handleLogIn = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(form, password, email);
+
+    setSuccess(" ")
+    setError(" ");
+
+    logIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setSuccess("Login Successful!")
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+        setError("Email or Password doesn't match! Please try again!");
+      });
+
+    form.reset();
+  };
 
   return (
     <Container className="mx-auto w-50">
-      <Form>
+      <Form onSubmit={handleLogIn}>
         <div className="d-flex align-items-center justify-content-between mb-3">
           <Form.Text className="fs-3 text-black fw-bold">Please Login</Form.Text>
           <Form.Text className="text-muted">
@@ -34,9 +62,9 @@ const Login = () => {
           </Button>
         </div>
         <br />
-        <Form.Text className="text-success">We'll never share your email with anyone else.</Form.Text>
+        <Form.Text className="text-success">{success}</Form.Text>
         <br />
-        <Form.Text className="text-danger">We'll never share your email with anyone else.</Form.Text>
+        <Form.Text className="text-danger">{error}</Form.Text>
       </Form>
     </Container>
   );
