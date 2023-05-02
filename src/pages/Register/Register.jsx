@@ -2,11 +2,12 @@ import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const Register = () => {
-  const { createUser, createUserWithGoogle } = useContext(AuthContext);
-  const provider = new GoogleAuthProvider()
+  const { createUser, createUserWithGoogle, createUserWithGithub } = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
 
   const [error, setError] = useState(" ");
   const [success, setSuccess] = useState(" ");
@@ -56,7 +57,20 @@ const Register = () => {
   };
 
   const handleGoogleSingIn = () => {
-    createUserWithGoogle(provider)
+    createUserWithGoogle(googleProvider)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  };
+
+  const handleGithubSingIn = () => {
+    createUserWithGithub(githubProvider)
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
@@ -85,7 +99,7 @@ const Register = () => {
           <Button onClick={handleGoogleSingIn} variant="info" className="w-100 mb-3 mt-3" type="submit">
             Continue with Google
           </Button>
-          <Button variant="info" className="w-100 mb-3" type="submit">
+          <Button onClick={handleGithubSingIn} variant="info" className="w-100 mb-3" type="submit">
             Continue with Github
           </Button>
           <hr /> <p className="text-center">or, Create an account with email and password.</p> <hr />
