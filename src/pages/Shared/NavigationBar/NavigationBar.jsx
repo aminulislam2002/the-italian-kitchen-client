@@ -37,7 +37,7 @@ const NavigationBar = () => {
             <div className="d-flex justify-content-between align-align-items-center gap-3 ">
               <Button variant="info">
                 <Link to="/register" className="text-decoration-none">
-                  Create Account
+                  Create New Account
                 </Link>
               </Button>
               {user ? (

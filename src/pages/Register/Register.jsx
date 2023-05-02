@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
@@ -8,6 +8,8 @@ const Register = () => {
 
   const [error, setError] = useState(" ");
   const [success, setSuccess] = useState(" ");
+
+  // const navigate = useNavigate();
 
   const handleCreateUser = (event) => {
     event.preventDefault();
@@ -19,7 +21,7 @@ const Register = () => {
     const photo = form.photo.value;
     const password = form.password.value;
     const confirm = form.confirm.value;
-    console.log(form, name, email, photo, password);
+    // console.log(form, name, email, photo, password);
 
     if (password !== confirm) {
       setError("Your password did not match");
@@ -29,7 +31,7 @@ const Register = () => {
       return;
     }
 
-    setSuccess(" ")
+    setSuccess(" ");
     setError(" ");
 
     createUser(email, password)
@@ -37,6 +39,7 @@ const Register = () => {
         const createdUser = result.user;
         console.log(createdUser);
         setSuccess("Congratulations! Your account has been successfully created!");
+        // navigate("/");
       })
       .catch((error) => {
         const errorCode = error.code;
