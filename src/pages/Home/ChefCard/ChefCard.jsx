@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ChefCard = ({ chef }) => {
   console.log(chef);
@@ -15,7 +16,9 @@ const ChefCard = ({ chef }) => {
               <p>Years of experience: {years_of_experience}</p>
               <p>Numbers of recipes: {number_of_recipes}</p>
               <p>Likes: {likes}</p>
-              <Button variant="info">View Recipes</Button>
+              <Button variant="info">
+                <Link to={`/chef/${chef.id}`}>View Recipes</Link>
+              </Button>
             </div>
             <div className="w-50">
               <h4 className="text-center">Bio</h4>
