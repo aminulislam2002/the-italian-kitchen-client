@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 const ChefRecipesDetails = () => {
   const [chefDetail, setChefDetail] = useState([]);
   const { id } = useParams();
-  console.log(chefDetail);
+  // console.log(chefDetail);
 
   const singleChefRecipes = useLoaderData();
 

@@ -3,6 +3,7 @@ import ChefCard from "../ChefCard/ChefCard";
 
 const ChefsDetails = () => {
   const [chefsDetails, setChefsDetails] = useState([]);
+  const [showMoreChef, setShowMoreChef] = useState([6]);
 
   useEffect(() => {
     fetch("http://localhost:5000/chefs")
@@ -10,6 +11,10 @@ const ChefsDetails = () => {
       .then((data) => setChefsDetails(data))
       .then((error) => console.log(error));
   }, []);
+
+  const handleShowMoreChef = () => {
+    setShowMoreChef(chefsDetails.length);
+  };
 
   return (
     <div className="bg-dark bg-opacity-10">
@@ -25,10 +30,18 @@ const ChefsDetails = () => {
           </h6>
         </div>
       </div>
+
       <div className="container">
-        {chefsDetails.map((chef) => (
+        {chefsDetails.slice(0, showMoreChef).map((chef) => (
           <ChefCard key={chef.id} chef={chef}></ChefCard>
         ))}
+        {showMoreChef < chefsDetails.length && (
+          <div className="d-flex justify-content-center pt-5">
+            <button onClick={handleShowMoreChef} type="button" className="btn btn-info">
+              Show More
+            </button>
+          </div>
+        )}
       </div>
 
       <div className="d-flex justify-content-center align-content-center text-center mt-5 container bg-danger">
