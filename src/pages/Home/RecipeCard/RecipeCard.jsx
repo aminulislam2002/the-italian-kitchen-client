@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RecipeCard = ({ recipe }) => {
   const { ingredients, instructions, title, img } = recipe;
 
   const [ingredientsItems, setIngredientsItems] = useState(5);
   const [instructionsItems, setInstructionsItems] = useState(3);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleIngredientsClick = () => {
     setIngredientsItems(ingredients.length);
@@ -13,6 +16,12 @@ const RecipeCard = ({ recipe }) => {
   const handleInstructionsClick = () => {
     setInstructionsItems(instructions.length);
   };
+
+  const handleShowToast = () => {
+    toast("confirm");
+    setIsFavorite(true);
+  };
+
   return (
     <div>
       <div className="row justify-content-center align-items-center">
@@ -20,10 +29,10 @@ const RecipeCard = ({ recipe }) => {
           <div className="card mt-5">
             <div className="card-body row">
               <div className="col-sm-12 col-md-6 col-lg-4">
-                <h3>{title}</h3>
                 <div className="w-100 d-flex justify-content-center align-items-center">
                   <img className="img-fluid" src={img} alt="" />
                 </div>
+                <h4 className="text-center">{title}</h4>
               </div>
               <div className="col-sm-12 col-md-6 col-lg-4">
                 <h3>Ingredients</h3>
@@ -52,6 +61,18 @@ const RecipeCard = ({ recipe }) => {
                     See More
                   </button>
                 )}
+                <div className="bg-dark">
+                  <button
+                    onClick={handleShowToast}
+                    type="button"
+                    className="btn btn-info"
+                    id="favorite-btn"
+                    disabled={isFavorite}
+                  >
+                    Favorite
+                  </button>
+                  <ToastContainer />
+                </div>
               </div>
             </div>
           </div>
