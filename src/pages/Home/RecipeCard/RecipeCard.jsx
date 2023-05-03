@@ -18,62 +18,58 @@ const RecipeCard = ({ recipe }) => {
   };
 
   const handleShowToast = () => {
-    toast("confirm");
+    toast("Favorited!");
     setIsFavorite(true);
   };
 
   return (
     <div>
-      <div className="row justify-content-center align-items-center">
-        <div className="col-sm-12">
-          <div className="card mt-5">
-            <div className="card-body row">
-              <div className="col-sm-12 col-md-6 col-lg-4">
-                <div className="w-100 d-flex justify-content-center align-items-center">
-                  <img className="img-fluid" src={img} alt="" />
-                </div>
-                <h4 className="text-center">{title}</h4>
-              </div>
-              <div className="col-sm-12 col-md-6 col-lg-4">
-                <h3>Ingredients</h3>
-                <ol>
-                  {ingredients.slice(0, ingredientsItems).map((ingredient, index) => (
-                    <li key={index}>
-                      {ingredient.name} {ingredient.quantity}
-                    </li>
-                  ))}
-                </ol>
-                {ingredientsItems < ingredients.length && (
-                  <button onClick={handleIngredientsClick} type="button" className="btn btn-link text-decoration-none">
-                    See More
-                  </button>
-                )}
-              </div>
-              <div className="col-sm-12 col-md-6 col-lg-4">
-                <h3>Instructions</h3>
-                <ul>
-                  {instructions.slice(0, instructionsItems).map((instruction, index) => (
-                    <li key={index}>{instruction}</li>
-                  ))}
-                </ul>
-                {instructionsItems < instructions.length && (
-                  <button onClick={handleInstructionsClick} type="button" className="btn btn-link text-decoration-none">
-                    See More
-                  </button>
-                )}
-                <div className="bg-dark">
-                  <button
-                    onClick={handleShowToast}
-                    type="button"
-                    className="btn btn-info"
-                    id="favorite-btn"
-                    disabled={isFavorite}
-                  >
-                    Favorite
-                  </button>
-                  <ToastContainer />
-                </div>
-              </div>
+      <div className="mt-5">
+        <div className="row bg-primary bg-opacity-25 ">
+          <div className="col-sm-12 col-md-6 col-lg-4">
+            <div className="w-100 d-flex justify-content-center align-items-center">
+              <img className="img-fluid" src={img} alt="" />
+            </div>
+            <h4 className="text-center">{title}</h4>
+          </div>
+          <div className="col-sm-12 col-md-6 col-lg-4">
+            <h3>Ingredients</h3>
+            <ol>
+              {ingredients.slice(0, ingredientsItems).map((ingredient, index) => (
+                <li key={index}>
+                  {ingredient.name} {ingredient.quantity}
+                </li>
+              ))}
+            </ol>
+            {ingredientsItems < ingredients.length && (
+              <button onClick={handleIngredientsClick} type="button" className="btn btn-link text-decoration-none">
+                See More
+              </button>
+            )}
+          </div>
+          <div className="col-sm-12 col-md-6 col-lg-4">
+            <h3>Instructions</h3>
+            <ul>
+              {instructions.slice(0, instructionsItems).map((instruction, index) => (
+                <li key={index}>{instruction}</li>
+              ))}
+            </ul>
+            {instructionsItems < instructions.length && (
+              <button onClick={handleInstructionsClick} type="button" className="btn btn-link text-decoration-none">
+                See More
+              </button>
+            )}
+            <div className="bg-dark">
+              <button
+                onClick={handleShowToast}
+                type="button"
+                className="btn btn-info"
+                id="favorite-btn"
+                disabled={isFavorite}
+              >
+                Favorite
+              </button>
+              <ToastContainer />
             </div>
           </div>
         </div>

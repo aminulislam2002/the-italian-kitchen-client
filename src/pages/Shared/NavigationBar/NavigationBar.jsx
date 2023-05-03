@@ -35,18 +35,18 @@ const NavigationBar = () => {
               </Nav.Link>
             </Nav>
             <div className="d-flex justify-content-between align-align-items-center gap-3 ">
-              <Button variant="info">
-                <Link to="/register" className="text-decoration-none">
+              <Button className="bg-info">
+                <Link to="/register" className="text-decoration-none text-white">
                   Create New Account
                 </Link>
               </Button>
               {user ? (
-                <Button onClick={handleLogOut} variant="info">
-                  <Link className="text-decoration-none">Log Out</Link>
+                <Button onClick={handleLogOut} className="bg-info">
+                  <Link className="text-decoration-none text-white">Log Out</Link>
                 </Button>
               ) : (
-                <Button variant="info">
-                  <Link to="/login" className="text-decoration-none">
+                <Button className="bg-info">
+                  <Link to="/login" className="text-decoration-none text-white">
                     Login
                   </Link>
                 </Button>
