@@ -36,13 +36,13 @@ const ChefRecipesDetails = () => {
               <hr />
               <h6>Email: {chefDetail.contact?.email}</h6>
               <h6>Phone: {chefDetail.contact?.phone}</h6>
-              <button type="button" class="me-1 btn btn-primary">
+              <button type="button" className="me-1 btn btn-primary">
                 <FaFacebook /> Facebook
               </button>
-              <button type="button" class="me-1 btn btn-danger">
+              <button type="button" className="me-1 btn btn-danger">
                 <FaInstagram /> Instagram
               </button>
-              <button type="button" class="me-1 btn btn-danger">
+              <button type="button" className="me-1 btn btn-danger">
                 <FaYoutube /> YouTube
               </button>
             </div>

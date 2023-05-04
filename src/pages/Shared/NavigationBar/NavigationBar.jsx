@@ -36,7 +36,7 @@ const NavigationBar = () => {
                     src={user?.photoURL}
                     alt={user?.displayName}
                     className="rounded-5 "
-                    style={{ maxHeight: "60px", maxHeight: "30px" }}
+                    style={{ maxWidth: "60px", maxHeight: "30px" }}
                     title={user?.displayName}
                   />
                 </ActiveNavLink>
