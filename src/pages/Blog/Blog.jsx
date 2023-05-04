@@ -1,6 +1,7 @@
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [loader, setLoader] = useState(false);
@@ -95,8 +96,11 @@ const Blog = () => {
         </div>
       </div>
       <div className="container d-flex justify-content-center align-items-center">
-        <button onClick={downloadPDF} disabled={!(loader === false)} type="button" className="btn btn-info">
+        <button onClick={downloadPDF} disabled={!(loader === false)} type="button" className="btn btn-info mt-5">
           {loader ? <span>Downloading PDF</span> : <span>Download PDF</span>}
+        </button>
+        <button className="btn btn-info ms-4 mt-5">
+            <Link className="text-decoration-none text-black" to="/">Back to Home</Link>
         </button>
       </div>
     </div>

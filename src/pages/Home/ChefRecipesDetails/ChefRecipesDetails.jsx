@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
@@ -60,6 +60,14 @@ const ChefRecipesDetails = () => {
         {singleChefRecipes.map((recipe) => (
           <RecipeCard key={recipe.key} recipe={recipe} id={id}></RecipeCard>
         ))}
+      </div>
+
+      <div className="d-flex justify-content-center align-items-center">
+        <button className="btn btn-info mb-5">
+          <Link className="text-decoration-none text-black" to="/">
+            Back to Home
+          </Link>
+        </button>
       </div>
     </div>
   );

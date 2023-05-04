@@ -37,6 +37,7 @@ const NavigationBar = () => {
                     alt={user?.displayName}
                     className="rounded-5 "
                     style={{ maxHeight: "60px", maxHeight: "30px" }}
+                    title={user?.displayName}
                   />
                 </ActiveNavLink>
               ) : (
@@ -51,7 +52,7 @@ const NavigationBar = () => {
               </Button>
               {user ? (
                 <Button onClick={handleLogOut} className="bg-info">
-                  <Link className="text-decoration-none text-white">Log Out</Link>
+                  <Link className="text-decoration-none text-white" to="/">Log Out</Link>
                 </Button>
               ) : (
                 <Button className="bg-info">

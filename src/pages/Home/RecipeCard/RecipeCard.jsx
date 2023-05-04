@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -59,7 +60,7 @@ const RecipeCard = ({ recipe }) => {
                 See More
               </button>
             )}
-            <div className="bg-dark">
+            <div className="d-flex justify-content-end align-items-end">
               <button
                 onClick={handleShowToast}
                 type="button"
