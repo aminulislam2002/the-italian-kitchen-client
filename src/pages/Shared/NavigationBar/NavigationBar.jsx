@@ -24,7 +24,7 @@ const NavigationBar = () => {
     <div>
       <Navbar className="bg-primary bg-opacity-100" variant="dark" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">The Italian Kitchn</Navbar.Brand>
+          <Navbar.Brand href="#">THE ITALIAN KITCHN</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
@@ -37,7 +37,7 @@ const NavigationBar = () => {
             <div className="d-flex justify-content-between align-align-items-center gap-3 ">
               <Button className="bg-info">
                 <Link to="/register" className="text-decoration-none text-white">
-                  Create New Account
+                  CRATE NEW ACCOUNT
                 </Link>
               </Button>
               {user ? (

@@ -1,9 +1,28 @@
-import React from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
+import React, { useState } from "react";
 
 const Blog = () => {
+  const [loader, setLoader] = useState(false);
+
+  const downloadPDF = () => {
+    const downloadedPage = document.getElementById("downloadedPage");
+    console.log(downloadedPage);
+    setLoader(true);
+    html2canvas(downloadedPage).then((canvas) => {
+      const imageData = canvas.toDataURL("img/png");
+      const doc = new jsPDF("p", "mm", "a4");
+      const width = doc.internal.pageSize.getWidth();
+      const height = doc.internal.pageSize.getHeight();
+      doc.addImage(imageData, "PNG", 0, 0, width, height);
+      setLoader(false);
+      doc.save("blog.pdf");
+    });
+  };
+
   return (
     <div className="bg-dark bg-opacity-10 pb-5 pt-5">
-      <div className="container">
+      <div className="container" id="downloadedPage">
         <div className="bg-danger p-2 rounded-2 bg-opacity-10 my-3">
           <h3>The differences between uncontrolled and controlled components.</h3>
           <div className="d-flex justify-content-between py-2 px-1 px-md-3 px-lg-5">
@@ -74,6 +93,11 @@ const Blog = () => {
             </ul>
           </div>
         </div>
+      </div>
+      <div className="container d-flex justify-content-center align-items-center">
+        <button onClick={downloadPDF} disabled={!(loader === false)} type="button" className="btn btn-info">
+          {loader ? <span>Downloading PDF</span> : <span>Download PDF</span>}
+        </button>
       </div>
     </div>
   );
