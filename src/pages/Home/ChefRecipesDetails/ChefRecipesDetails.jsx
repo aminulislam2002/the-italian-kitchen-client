@@ -23,7 +23,7 @@ const ChefRecipesDetails = () => {
   return (
     <div className="bg-dark bg-opacity-10">
       {chefDetail && (
-        <div className="container">
+        <div className="container pb-5">
           <div className="row bg-success bg-opacity-25 pt-5 pb-3 ps-2 pe-2">
             <div className="col-sm-12 col-md-6 col-lg-4 ">
               <img src={chefDetail.image_url} className="w-100 rounded-circle " alt="..." />

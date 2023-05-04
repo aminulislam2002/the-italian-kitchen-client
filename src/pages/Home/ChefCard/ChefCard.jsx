@@ -7,7 +7,7 @@ const ChefCard = ({ chef }) => {
   return (
     <div className="row justify-content-center align-items-center">
       <div className="col-sm-12">
-        <div className=" mt-5">
+        <div className="mt-5">
           <div className=" row bg-success bg-opacity-25 p-3">
             <div className="col-sm-12 order-2 order-md-2 order-lg-1 col-md-6 col-lg-4">
               <h4>Name: {name}</h4>

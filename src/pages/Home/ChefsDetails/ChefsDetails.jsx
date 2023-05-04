@@ -17,8 +17,8 @@ const ChefsDetails = () => {
   };
 
   return (
-    <div className="bg-dark bg-opacity-10">
-      <div className="d-flex justify-content-center align-content-center text-center mt-5 container bg-danger">
+    <div className="bg-dark bg-opacity-10 py-5">
+      <div className="d-flex justify-content-center align-content-center text-center container bg-danger bg-opacity-25">
         <div className="w-75 p-md-5">
           <h1>Meet Our Expert Chefs</h1>
           <h6>
@@ -44,7 +44,7 @@ const ChefsDetails = () => {
         )}
       </div>
 
-      <div className="d-flex justify-content-center align-content-center text-center mt-5 container bg-danger">
+      <div className="d-flex justify-content-center align-content-center text-center mt-5 container bg-danger bg-opacity-25">
         <div className="w-75 p-md-5">
           <h4>Discover Our Delicious Range of Dishes Across Six Categories</h4>
           <h6>

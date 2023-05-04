@@ -8,6 +8,7 @@ import ChefRecipesDetails from "../pages/Home/ChefRecipesDetails/ChefRecipesDeta
 import PrivateRoute from "./PrivateRoute";
 import Page404 from "../pages/Page404/Page404";
 import Blog from "../pages/Blog/Blog";
+import RegisterLogin from "../layouts/RegisterLogin";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      ,
       {
         path: "/blog",
         element: <Blog></Blog>,
@@ -48,6 +54,20 @@ const router = createBrowserRouter([
       },
     ],
   },
+  // {
+  //   path: "/login",
+  //   element: <RegisterLogin></RegisterLogin>,
+  //   children: [
+  //     {
+  //       path: "/login",
+  //       element: <Login></Login>,
+  //     },
+  //     {
+  //       path: "/register",
+  //       element: <Register></Register>,
+  //     },
+  //   ],
+  // },
   {
     path: "/*",
     element: <Page404></Page404>,

@@ -24,7 +24,7 @@ const RecipeCard = ({ recipe }) => {
 
   return (
     <div>
-      <div className="mt-5 mb-5">
+      <div className=" pb-5">
         <div className="row bg-primary bg-opacity-25 p-5 rounded-5">
           <div className="col-sm-12 col-md-6 col-lg-4">
             <div className="w-100 d-flex justify-content-center align-items-center">
