@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer bg-dark bg-opacity-10 mt-5 pt-5 mb-5 pb-5">
+      <footer className="footer bg-dark bg-opacity-10 pt-5 pb-5">
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-md-8 col-lg-4 order-1 order-md-1 order-lg-1 d-flex justify-content-center align-align-items-lg-start">
@@ -16,7 +16,7 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="col-sm-12 col-md-4 col-lg-2 order-3 order-md-3 order-lg-2 d-flex justify-content-center align-items-start">
+            <div className="col-6 col-sm-6 col-md-4 col-lg-2 order-3 order-md-3 order-lg-2 ">
               <div>
                 <h4>Restaurant</h4>
                 <ul className="list-unstyled">
@@ -43,7 +43,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-sm-12 col-md-4 col-lg-2 order-3 order-md-4 order-lg-3 d-flex justify-content-center align-items-start">
+            <div className="col-6 col-sm-6 col-md-4 col-lg-2 order-3 order-md-4 order-lg-3 ">
               <div>
                 <h4>Products</h4>
                 <ul className="list-unstyled">
@@ -70,7 +70,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-sm-12 col-md-4 col-lg-2 order-4 order-md-5 order-lg-4 d-flex justify-content-center align-items-start">
+            <div className="col-6 col-sm-6 col-md-4 col-lg-2 order-4 order-md-5 order-lg-4">
               <div>
                 <h4>Support</h4>
                 <ul className="list-unstyled">
@@ -97,28 +97,28 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-sm-12 col-md-4 col-lg-2 order-5 order-md-2 order-lg-5 d-flex justify-content-center align-items-start">
+            <div className="col-6 col-sm-6 col-md-4 col-lg-2 order-5 order-md-2 order-lg-5 ">
               <div>
                 <h4>Contact</h4>
                 <ul className="list-unstyled">
                   <li>
                     <a className="text-decoration-none" href="#">
-                    +1777-978-5570
+                      +1777-978-5570
                     </a>
                   </li>
                   <li>
                     <a className="text-decoration-none" href="#">
-                    example@gmail.com
+                      example@gmail.com
                     </a>
                   </li>
                   <li>
                     <a className="text-decoration-none" href="#">
-                    524 Broadway, Rome.
+                      524 Broadway, Rome.
                     </a>
                   </li>
                   <li>
                     <a className="text-decoration-none" href="#">
-                    Rome, Italy.
+                      Rome, Italy.
                     </a>
                   </li>
                 </ul>

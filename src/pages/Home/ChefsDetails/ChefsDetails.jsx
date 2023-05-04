@@ -6,7 +6,7 @@ const ChefsDetails = () => {
   const [showMoreChef, setShowMoreChef] = useState([6]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/chefs")
+    fetch("https://ph-assignment-number-ten-server-aminulislam2002.vercel.app/chefs")
       .then((res) => res.json())
       .then((data) => setChefsDetails(data))
       .then((error) => console.log(error));

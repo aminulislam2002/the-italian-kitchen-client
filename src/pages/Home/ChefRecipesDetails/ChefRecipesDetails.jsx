@@ -11,7 +11,7 @@ const ChefRecipesDetails = () => {
   const singleChefRecipes = useLoaderData();
 
   useEffect(() => {
-    fetch("http://localhost:5000/chefs")
+    fetch("https://ph-assignment-number-ten-server-aminulislam2002.vercel.app/chefs")
       .then((res) => res.json())
       .then((data) => {
         const matchedChef = data.find((chef) => parseInt(chef.id) === parseInt(id));
@@ -21,7 +21,7 @@ const ChefRecipesDetails = () => {
   }, [id]);
 
   return (
-    <div>
+    <div className="bg-dark bg-opacity-10">
       {chefDetail && (
         <div className="container">
           <div className="row bg-success bg-opacity-25 pt-5 pb-3 ps-2 pe-2">
