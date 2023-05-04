@@ -30,9 +30,18 @@ const NavigationBar = () => {
             <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
               <ActiveNavLink to="/">Home</ActiveNavLink>
               <ActiveNavLink to="/blog">Blogs</ActiveNavLink>
-              <ActiveNavLink>
-                {user?.displayName} <img src={user?.photoURL} alt="" /> <FaUser></FaUser>
-              </ActiveNavLink>
+              {user ? (
+                <ActiveNavLink>
+                  <img
+                    src={user?.photoURL}
+                    alt={user?.displayName}
+                    className="rounded-5 "
+                    style={{ maxHeight: "60px", maxHeight: "30px" }}
+                  />
+                </ActiveNavLink>
+              ) : (
+                <ActiveNavLink to="/login">Profile</ActiveNavLink>
+              )}
             </Nav>
             <div className="d-flex justify-content-between align-align-items-center gap-3 ">
               <Button className="bg-info">
