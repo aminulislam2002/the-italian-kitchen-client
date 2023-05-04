@@ -28,10 +28,10 @@ const NavigationBar = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
-              <ActiveNavLink href="/">Home</ActiveNavLink>
-              <Nav.Link href="#action2">Blogs</Nav.Link>
-              <Nav.Link href="#action2">{user?.displayName}</Nav.Link>
-              <Nav.Link href="#action3">
+              <ActiveNavLink to="/">Home</ActiveNavLink>
+              <ActiveNavLink to="/blog">Blogs</ActiveNavLink>
+              <h4>{user?.displayName}</h4>
+              <Nav.Link >
                 <FaUser></FaUser>
               </Nav.Link>
             </Nav>

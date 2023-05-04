@@ -7,6 +7,7 @@ import ChefRecipe from "../layouts/ChefRecipe";
 import ChefRecipesDetails from "../pages/Home/ChefRecipesDetails/ChefRecipesDetails";
 import PrivateRoute from "./PrivateRoute";
 import Page404 from "../pages/Page404/Page404";
+import Blog from "../pages/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
       },
     ],
   },
