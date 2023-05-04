@@ -35,7 +35,7 @@ const Register = () => {
     }
 
     setSuccess(" ");
-    setError(" ");
+    setError(" "); 
 
     createUser(email, password)
       .then((result) => {
