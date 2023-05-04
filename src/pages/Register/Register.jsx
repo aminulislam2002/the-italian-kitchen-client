@@ -5,7 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 const Register = () => {
-  const { createUser, createUserWithGoogle, createUserWithGithub } = useContext(AuthContext);
+  const { createUser, createUserWithGoogle, createUserWithGithub, updateUserProfile } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
@@ -40,6 +40,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
+        updateUserProfile(result.user, name, photo);
         console.log(createdUser);
         setSuccess("Congratulations! Your account has been successfully created!");
         navigate("/");
